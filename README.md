@@ -1,1 +1,34 @@
 # Wordpress-Clone---In-React
+
+
+|- src
+  |- components
+    |- Header.js
+    |- Navigation.js
+    |- Footer.js
+    |- Posts.js
+    |- SinglePost.js
+    |- User.js
+    |- Login.js
+    |- Register.js
+    |- EditProfile.js
+    |- NewPost.js
+    |- EditPost.js
+    |- DeletePost.js
+  |- pages
+    |- Home.js
+    |- Blog.js
+    |- SinglePostPage.js
+    |- Profile.js
+    |- Login.js
+    |- Register.js
+    |- NewPost.js
+    |- EditPost.js
+    |- DeletePost.js
+  |- services
+    |- api.js
+    |- auth.js
+  |- utils
+    |- helpers.js
+  |- App.js
+  |- index.js
