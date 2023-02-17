@@ -1,34 +1,3 @@
-# Wordpress-Clone---In-React
+# ReactPress - Wordpress Clone Made with Node.js and React
 
-
-|- src
-  |- components
-    |- Header.js
-    |- Navigation.js
-    |- Footer.js
-    |- Posts.js
-    |- SinglePost.js
-    |- User.js
-    |- Login.js
-    |- Register.js
-    |- EditProfile.js
-    |- NewPost.js
-    |- EditPost.js
-    |- DeletePost.js
-  |- pages
-    |- Home.js
-    |- Blog.js
-    |- SinglePostPage.js
-    |- Profile.js
-    |- Login.js
-    |- Register.js
-    |- NewPost.js
-    |- EditPost.js
-    |- DeletePost.js
-  |- services
-    |- api.js
-    |- auth.js
-  |- utils
-    |- helpers.js
-  |- App.js
-  |- index.js
+## Using Next.js and Gatsby as Themes
