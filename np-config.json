@@ -1,0 +1,14 @@
+{
+	"themes": {
+		"theme-1": {
+			"nextAppDir": "./np-content/themes/theme-1/",
+			"nextAppPath": "/theme-1/",
+			"active": false
+		},
+		"theme-2": {
+			"nextAppDir": "./np-content/themes/theme-2/",
+			"nextAppPath": "/theme-2/",
+			"active": true
+		}
+	}
+}

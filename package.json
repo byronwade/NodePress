@@ -1,0 +1,22 @@
+{
+	"name": "nodepress",
+	"version": "1.0.0",
+	"description": "",
+	"main": "server.js",
+	"type": "module",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "node server.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"chokidar": "^3.5.3",
+		"cross-spawn": "^7.0.3",
+		"express": "^4.18.2",
+		"fkill": "^8.1.0",
+		"http-proxy": "^1.18.1",
+		"kill-port": "^2.0.1",
+		"next": "^13.1.6"
+	}
+}
