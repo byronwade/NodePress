@@ -1,22 +1,25 @@
 import { spawn } from "cross-spawn";
 import express from "express";
-import * as fs from "fs/promises";
+import fs from "fs";
 import killPort from "kill-port";
 import chokidar from "chokidar";
 
 const app = express();
 
 let activeTheme = null;
-let config = null;
 const nextPort = 3000;
 const reactPort = 3008;
 let nextAppProcess = null;
 
 const loadConfig = async () => {
 	try {
-		const newConfig = JSON.parse(
-			await fs.readFile("./np-config.json", "utf8")
+		// Dynamically load the module using the import statement
+		console.log("Loading configuration from ./np-config.js");
+		const { default: newConfig } = await import(
+			`./np-config.js?t=${Date.now()}`
 		);
+
+		console.log(newConfig);
 		const oldActiveTheme = activeTheme;
 		for (const themeName in newConfig.themes) {
 			if (newConfig.themes[themeName].active) {
@@ -24,7 +27,6 @@ const loadConfig = async () => {
 				break;
 			}
 		}
-		config = newConfig;
 		if (oldActiveTheme !== activeTheme) {
 			await restartNextJsServer();
 		}
@@ -80,8 +82,8 @@ const startNextJsServer = async () => {
 
 loadConfig();
 
-chokidar.watch("./np-config.json").on("change", async (path) => {
-	console.log("Watching...");
+chokidar.watch("./np-config.js").on("change", (path) => {
+	console.log(`Changed: ${path}`);
 	loadConfig();
 });
 
@@ -95,7 +97,7 @@ const startReactServer = async () => {
 		console.log(`React app server exited with code ${code}`);
 	});
 
-	if (config && activeTheme) {
+	if (activeTheme) {
 		app.use("/np-admin", express.static("./np-admin/build"));
 		console.log("React app server started");
 	}
